@@ -1,0 +1,69 @@
+{% extends "ProyectoWebApp/padre.html" %}
+
+{% load static %}
+
+{% block content %}
+<header id="home" class="header">
+    <!-- =============== container =============== -->
+    <div class="container">
+        <div class="header-content row">
+            
+
+            <div id="owl-demo" class="owl-carousel header1">
+              <div>
+              <div class="col-xs-12 col-sm-6 col-md-6 header-text">
+                <h2 class="wow bounceIn animated" data-wow-delay=".40s">FRIENDLY <span>TEMPLATE</span> FOR <br/>YOUR WEBSITE</h2>
+                <h3 class="wow bounceIn animated" data-wow-delay=".50s">FOR YOUR WEBSITE </h3>
+                <p class="wow bounceIn animated" data-wow-delay=".60s">Lorem ipsum dolor sit amet, consectetur adipiscing elit.We ensure sit amet, consectetur adipiscing elit</p>
+                <p>
+                    <div class="btn btn-primary btn-lg btn-ornge wow bounceIn animated" data-wow-delay="1s"><i class="hbtn"></i> <span>Click Here</span></i>
+                    </div>
+                </p>
+                </div>               
+            </div>
+             <div>
+              <div class="col-xs-12 col-sm-6 col-md-6 header-text">
+                <h2 class="wow bounceIn animated" data-wow-delay=".40s">FRIENDLY <span>THIS</span> FOR <br/>YOUR WEBSITE</h2>
+                <h3 class="wow bounceIn animated" data-wow-delay=".50s">FOR YOUR WEBSITE </h3>
+                <p class="wow bounceIn animated" data-wow-delay=".60s">Lorem ipsum dolor sit amet, consectetur adipiscing elit.We ensure sit amet, consectetur adipiscing elit</p>
+                <p>
+                    <div class="btn btn-primary btn-lg btn-ornge wow bounceIn animated" data-wow-delay="1s"><i class="hbtn"></i> <span>Click Here</span></i>
+                    </div>
+                </p>
+                </div>               
+            </div>
+            </div>				 
+            </div>  
+    </div>
+    <!-- =============== container end =============== -->
+</header>
+<section id="contact">
+    <!-- =============== container =============== -->
+        <div class="container">
+                <div class="row">
+                <div class="title">
+                <h2>Contact</h2>
+                <p>Meet some of our lovely, passionate, positive people.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 wow bounceIn animated" data-wow-delay=".1s">
+                    {% if "valido" in request.GET %}
+                    <p>Información enviada</p>
+                    {% endif %}
+                    <form action="#" method="post">
+                        {% csrf_token %}
+                        <div class="ajax-hidden">
+                            <div class="col-xs-12 col-sm-6 col-md-6 form-group wow fadeInUp animated">
+                                <table class="margen">{{miFormulario}}</table>
+                            </div>
+                        </div>
+                        <input data-wow-delay=".3s" value="Enviar" class="btn btn-sm btn-block wow fadeInUp animated" type="submit">
+                        <div class="ajax-response"></div>
+                    </form>
+
+                </div>              
+            </div>
+        </div><!-- =============== container end =============== -->
+    </section>
+{% endblock %}
